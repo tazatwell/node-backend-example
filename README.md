@@ -71,3 +71,11 @@ You can also use `curl` to perform write CRUD operations:
 - `curl -d 'city=Davis&temp_lo=41&temp_hi=73&prcp=0&date=2024-02-22' http://localhost:3000/weathers/2` to put a new row in the database.
 - `curl -X PUT -d 'city=Davis&temp_lo=41&temp_hi=73&prcp=0&date=2024-02-22' http://localhost:3000/weathers/2` to update the row in the database where the id=2.
 - `curl -X DELETE http://localhost:3000/weathers/2` to delete the row in the `weathers` database with id=2.
+
+## Login
+
+The `login-example/index.js` has an example of using the node built-in crypto module to login in a user.
+
+When creating a user, the user supplies a password string, and the backend must create a hash of the combined password and salt.
+
+When logging in, the backend takes the provided password, the proven salt from user creation, and cryptographically compare the two.
